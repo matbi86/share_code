@@ -1,0 +1,549 @@
+22:47:05 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\study\git_study\workspace\temp_xsdb_launch_script.tcl
+22:47:13 INFO  : XSCT server has started successfully.
+22:47:13 INFO  : plnx-install-location is set to ''
+22:47:15 INFO  : Successfully done setting XSCT server connection channel  
+22:47:15 INFO  : Successfully done query RDI_DATADIR 
+22:47:15 INFO  : Successfully done setting workspace for the tool. 
+22:47:17 INFO  : Registering command handlers for Vitis TCF services
+22:52:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:52:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:52:18 INFO  : 'jtag frequency' command is executed.
+22:52:18 INFO  : Context for 'APU' is selected.
+22:52:18 INFO  : System reset is completed.
+22:52:21 INFO  : 'after 3000' command is executed.
+22:52:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:52:23 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:52:23 INFO  : Context for 'APU' is selected.
+22:52:23 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:52:23 INFO  : 'configparams force-mem-access 1' command is executed.
+22:52:24 INFO  : Context for 'APU' is selected.
+22:52:24 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:52:24 INFO  : 'ps7_init' command is executed.
+22:52:24 INFO  : 'ps7_post_config' command is executed.
+22:52:24 INFO  : 'configparams force-mem-access 0' command is executed.
+22:52:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:52:24 INFO  : Memory regions updated for context APU
+22:52:24 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_hello_world_system_standalone.tcl'
+22:52:46 INFO  : Disconnected from the channel tcfchan#1.
+22:52:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:52:49 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:52:49 INFO  : 'jtag frequency' command is executed.
+22:52:49 INFO  : Context for 'APU' is selected.
+22:52:49 INFO  : System reset is completed.
+22:52:52 INFO  : 'after 3000' command is executed.
+22:52:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:52:54 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:52:54 INFO  : Context for 'APU' is selected.
+22:52:54 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:52:54 INFO  : 'configparams force-mem-access 1' command is executed.
+22:52:55 INFO  : Context for 'APU' is selected.
+22:52:55 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:52:55 INFO  : 'ps7_init' command is executed.
+22:52:55 INFO  : 'ps7_post_config' command is executed.
+22:52:55 INFO  : 'configparams force-mem-access 0' command is executed.
+22:52:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:52:55 INFO  : Memory regions updated for context APU
+22:52:55 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+22:53:15 INFO  : Disconnected from the channel tcfchan#2.
+22:53:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:53:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:53:16 INFO  : 'jtag frequency' command is executed.
+22:53:16 INFO  : Context for 'APU' is selected.
+22:53:16 INFO  : System reset is completed.
+22:53:19 INFO  : 'after 3000' command is executed.
+22:53:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:53:21 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:53:21 INFO  : Context for 'APU' is selected.
+22:53:21 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:53:21 INFO  : 'configparams force-mem-access 1' command is executed.
+22:53:21 INFO  : Context for 'APU' is selected.
+22:53:21 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:53:22 INFO  : 'ps7_init' command is executed.
+22:53:22 INFO  : 'ps7_post_config' command is executed.
+22:53:22 INFO  : 'configparams force-mem-access 0' command is executed.
+22:53:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:53:22 INFO  : Memory regions updated for context APU
+22:53:22 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+22:54:03 INFO  : Disconnected from the channel tcfchan#3.
+22:54:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:54:04 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:54:04 INFO  : 'jtag frequency' command is executed.
+22:54:04 INFO  : Context for 'APU' is selected.
+22:54:04 INFO  : System reset is completed.
+22:54:07 INFO  : 'after 3000' command is executed.
+22:54:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:54:10 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:54:10 INFO  : Context for 'APU' is selected.
+22:54:10 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:54:10 INFO  : 'configparams force-mem-access 1' command is executed.
+22:54:10 INFO  : Context for 'APU' is selected.
+22:54:10 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:54:10 INFO  : 'ps7_init' command is executed.
+22:54:10 INFO  : 'ps7_post_config' command is executed.
+22:54:10 INFO  : 'configparams force-mem-access 0' command is executed.
+22:54:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:54:10 INFO  : Memory regions updated for context APU
+22:54:10 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+22:56:18 INFO  : Disconnected from the channel tcfchan#4.
+22:56:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:56:19 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:56:19 INFO  : 'jtag frequency' command is executed.
+22:56:19 INFO  : Context for 'APU' is selected.
+22:56:19 INFO  : System reset is completed.
+22:56:22 INFO  : 'after 3000' command is executed.
+22:56:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:56:25 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:56:25 INFO  : Context for 'APU' is selected.
+22:56:25 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:56:25 INFO  : 'configparams force-mem-access 1' command is executed.
+22:56:25 INFO  : Context for 'APU' is selected.
+22:56:25 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:56:25 INFO  : 'ps7_init' command is executed.
+22:56:25 INFO  : 'ps7_post_config' command is executed.
+22:56:25 INFO  : 'configparams force-mem-access 0' command is executed.
+22:56:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:56:25 INFO  : Memory regions updated for context APU
+22:56:25 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+22:57:27 INFO  : Disconnected from the channel tcfchan#5.
+22:57:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:57:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:57:30 INFO  : 'jtag frequency' command is executed.
+22:57:30 INFO  : Context for 'APU' is selected.
+22:57:30 INFO  : System reset is completed.
+22:57:33 INFO  : 'after 3000' command is executed.
+22:57:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:57:35 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:57:35 INFO  : Context for 'APU' is selected.
+22:57:35 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:57:35 INFO  : 'configparams force-mem-access 1' command is executed.
+22:57:35 INFO  : Context for 'APU' is selected.
+22:57:35 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:57:35 INFO  : 'ps7_init' command is executed.
+22:57:35 INFO  : 'ps7_post_config' command is executed.
+22:57:35 INFO  : 'configparams force-mem-access 0' command is executed.
+22:57:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:57:36 INFO  : Memory regions updated for context APU
+22:57:36 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(1).tcl'
+22:57:58 INFO  : Disconnected from the channel tcfchan#6.
+22:58:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:58:01 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:58:01 INFO  : 'jtag frequency' command is executed.
+22:58:01 INFO  : Context for 'APU' is selected.
+22:58:01 INFO  : System reset is completed.
+22:58:04 INFO  : 'after 3000' command is executed.
+22:58:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:58:06 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:58:06 INFO  : Context for 'APU' is selected.
+22:58:06 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:58:06 INFO  : 'configparams force-mem-access 1' command is executed.
+22:58:06 INFO  : Context for 'APU' is selected.
+22:58:06 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:58:06 INFO  : 'ps7_init' command is executed.
+22:58:06 INFO  : 'ps7_post_config' command is executed.
+22:58:06 INFO  : 'configparams force-mem-access 0' command is executed.
+22:58:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:58:07 INFO  : Memory regions updated for context APU
+22:58:07 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(1).tcl'
+22:58:35 INFO  : Disconnected from the channel tcfchan#7.
+22:58:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:58:39 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:58:39 INFO  : 'jtag frequency' command is executed.
+22:58:39 INFO  : Context for 'APU' is selected.
+22:58:39 INFO  : System reset is completed.
+22:58:42 INFO  : 'after 3000' command is executed.
+22:58:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+22:58:45 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+22:58:45 INFO  : Context for 'APU' is selected.
+22:58:45 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:58:45 INFO  : 'configparams force-mem-access 1' command is executed.
+22:58:45 INFO  : Context for 'APU' is selected.
+22:58:45 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+22:58:46 INFO  : 'ps7_init' command is executed.
+22:58:46 INFO  : 'ps7_post_config' command is executed.
+22:58:46 INFO  : 'configparams force-mem-access 0' command is executed.
+22:58:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:58:46 INFO  : Memory regions updated for context APU
+22:58:46 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(1).tcl'
+22:59:58 INFO  : Disconnected from the channel tcfchan#8.
+22:59:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:59:59 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+22:59:59 INFO  : 'jtag frequency' command is executed.
+22:59:59 INFO  : Context for 'APU' is selected.
+22:59:59 INFO  : System reset is completed.
+23:00:02 INFO  : 'after 3000' command is executed.
+23:00:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:00:05 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:00:05 INFO  : Context for 'APU' is selected.
+23:00:05 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:00:05 INFO  : 'configparams force-mem-access 1' command is executed.
+23:00:05 INFO  : Context for 'APU' is selected.
+23:00:05 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:00:06 INFO  : 'ps7_init' command is executed.
+23:00:06 INFO  : 'ps7_post_config' command is executed.
+23:00:06 INFO  : 'configparams force-mem-access 0' command is executed.
+23:00:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:00:06 INFO  : Memory regions updated for context APU
+23:00:06 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+23:00:44 INFO  : Disconnected from the channel tcfchan#9.
+23:01:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:01:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+23:01:14 INFO  : 'jtag frequency' command is executed.
+23:01:14 INFO  : Context for 'APU' is selected.
+23:01:14 INFO  : System reset is completed.
+23:01:17 INFO  : 'after 3000' command is executed.
+23:01:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:01:19 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:01:19 INFO  : Context for 'APU' is selected.
+23:01:19 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:01:19 INFO  : 'configparams force-mem-access 1' command is executed.
+23:01:19 INFO  : Context for 'APU' is selected.
+23:01:19 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:01:20 INFO  : 'ps7_init' command is executed.
+23:01:20 INFO  : 'ps7_post_config' command is executed.
+23:01:20 INFO  : 'configparams force-mem-access 0' command is executed.
+23:01:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:01:20 INFO  : Memory regions updated for context APU
+23:01:20 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default.tcl'
+23:08:17 INFO  : Disconnected from the channel tcfchan#10.
+23:08:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:08:20 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+23:08:20 INFO  : 'jtag frequency' command is executed.
+23:08:20 INFO  : Context for 'APU' is selected.
+23:08:20 INFO  : System reset is completed.
+23:08:23 INFO  : 'after 3000' command is executed.
+23:08:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:08:25 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:08:25 INFO  : Context for 'APU' is selected.
+23:08:25 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:08:25 INFO  : 'configparams force-mem-access 1' command is executed.
+23:08:25 INFO  : Context for 'APU' is selected.
+23:08:25 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:08:25 INFO  : 'ps7_init' command is executed.
+23:08:25 INFO  : 'ps7_post_config' command is executed.
+23:08:25 INFO  : 'configparams force-mem-access 0' command is executed.
+23:08:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:08:26 INFO  : Memory regions updated for context APU
+23:08:26 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(2).tcl'
+23:08:45 ERROR : Failed to openhw "D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa"
+Reason: ERROR: [Common 17-39] 'hsi::open_hw_design' failed due to earlier errors.
+
+23:09:50 INFO  : Checking for BSP changes to sync application flags for project 'hello_world'...
+23:10:53 INFO  : Disconnected from the channel tcfchan#11.
+23:10:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:10:54 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+23:10:54 INFO  : 'jtag frequency' command is executed.
+23:10:54 INFO  : Context for 'APU' is selected.
+23:10:54 INFO  : System reset is completed.
+23:10:57 INFO  : 'after 3000' command is executed.
+23:10:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:11:00 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:11:00 INFO  : Context for 'APU' is selected.
+23:11:00 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:11:00 INFO  : 'configparams force-mem-access 1' command is executed.
+23:11:00 INFO  : Context for 'APU' is selected.
+23:11:00 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:11:00 INFO  : 'ps7_init' command is executed.
+23:11:00 INFO  : 'ps7_post_config' command is executed.
+23:11:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:11:00 INFO  : The application 'D:/study/git_study/workspace/hello_world/Release/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:11:00 INFO  : 'configparams force-mem-access 0' command is executed.
+23:11:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/study/git_study/workspace/hello_world/Release/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:11:00 INFO  : Memory regions updated for context APU
+23:11:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:11:00 INFO  : 'con' command is executed.
+23:11:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:11:00 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(3).tcl'
+23:13:16 INFO  : Disconnected from the channel tcfchan#15.
+23:13:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:13:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+23:13:17 INFO  : 'jtag frequency' command is executed.
+23:13:17 INFO  : Context for 'APU' is selected.
+23:13:17 INFO  : System reset is completed.
+23:13:20 INFO  : 'after 3000' command is executed.
+23:13:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:13:22 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:13:22 INFO  : Context for 'APU' is selected.
+23:13:22 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:13:22 INFO  : 'configparams force-mem-access 1' command is executed.
+23:13:22 INFO  : Context for 'APU' is selected.
+23:13:22 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:13:23 INFO  : 'ps7_init' command is executed.
+23:13:23 INFO  : 'ps7_post_config' command is executed.
+23:13:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:13:23 INFO  : The application 'D:/study/git_study/workspace/hello_world/Release/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:13:23 INFO  : 'configparams force-mem-access 0' command is executed.
+23:13:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/study/git_study/workspace/hello_world/Release/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:13:23 INFO  : Memory regions updated for context APU
+23:13:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:13:24 INFO  : 'con' command is executed.
+23:13:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:13:24 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(3).tcl'
+23:14:42 INFO  : Checking for BSP changes to sync application flags for project 'hello_world'...
+23:15:18 INFO  : Disconnected from the channel tcfchan#16.
+23:15:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:15:19 INFO  : Jtag cable 'Digilent Zybo Z7 210351A78438A' is selected.
+23:15:19 INFO  : 'jtag frequency' command is executed.
+23:15:19 INFO  : Context for 'APU' is selected.
+23:15:19 INFO  : System reset is completed.
+23:15:22 INFO  : 'after 3000' command is executed.
+23:15:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1' command is executed.
+23:15:24 INFO  : FPGA configured successfully with bitstream "D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit"
+23:15:25 INFO  : Context for 'APU' is selected.
+23:15:25 INFO  : Hardware design information is loaded from 'D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:15:25 INFO  : 'configparams force-mem-access 1' command is executed.
+23:15:25 INFO  : Context for 'APU' is selected.
+23:15:25 INFO  : Sourcing of 'D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl' is done.
+23:15:25 INFO  : 'ps7_init' command is executed.
+23:15:25 INFO  : 'ps7_post_config' command is executed.
+23:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:15:25 INFO  : The application 'D:/study/git_study/workspace/hello_world/Release/hello_world.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:15:25 INFO  : 'configparams force-mem-access 0' command is executed.
+23:15:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A78438A" && level==0} -index 1
+fpga -file D:/study/git_study/workspace/hello_world/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/study/git_study/workspace/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/study/git_study/workspace/hello_world/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/study/git_study/workspace/hello_world/Release/hello_world.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:15:25 INFO  : Memory regions updated for context APU
+23:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:15:25 INFO  : 'con' command is executed.
+23:15:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:15:25 INFO  : Launch script is exported to file 'D:\study\git_study\workspace\.sdk\launch_scripts\single_application_debug\debugger_hello_world-default_(3).tcl'
+23:18:00 INFO  : Disconnected from the channel tcfchan#17.
