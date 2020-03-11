@@ -1,0 +1,1 @@
+xvlog ./async_fifo.v ./gray_counter.v
